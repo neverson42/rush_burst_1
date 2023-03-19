@@ -1,0 +1,153 @@
+<html>
+<head>
+<style>
+
+  margin-left: auto;
+  margin-right: auto;
+  
+.rangeslider {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  background: #FCF3CF;
+  width: 1000px;
+  height: 20px;
+  opacity: 0.8;
+  margin-top: 500px;
+}
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #34495E;
+  width: 2%;
+  height: 20px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.image {
+  text-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image>img {
+	height: 462;
+	width: 1000;
+
+  position: absolute;
+  display: none;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.image>img.visible,
+.image>img:first-child {
+  display: block;
+}
+
+.sliderOutput>div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.sliderOutput h6,
+.sliderOutput p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+</head>
+<body>
+
+<div class="image mt-3 mb-3" id="sliderImages">
+<img src="20230318_131301_013.jpg" /> 
+<img src="20230318_131301_014.jpg" /> 
+<img src="20230318_131301_015.jpg" /> 
+<img src="20230318_131301_016.jpg" /> 
+<img src="20230318_131301_017.jpg" /> 
+<img src="20230318_131301_018.jpg" /> 
+<img src="20230318_131301_019.jpg" /> 
+<img src="20230318_131301_020.jpg" /> 
+<img src="20230318_131301_021.jpg" /> 
+<img src="20230318_131301_022.jpg" /> 
+<img src="20230318_131301_023.jpg" /> 
+<img src="20230318_131301_024.jpg" /> 
+<img src="20230318_131301_025.jpg" /> 
+<img src="20230318_131301_026.jpg" /> 
+<img src="20230318_131301_027.jpg" /> 
+<img src="20230318_131301_028.jpg" /> 
+<img src="20230318_131301_029.jpg" /> 
+<img src="20230318_131301_030.jpg" /> 
+<img src="20230318_131301_031.jpg" /> 
+<img src="20230318_131301_032.jpg" /> 
+<img src="20230318_131301_033.jpg" /> 
+<img src="20230318_131301_034.jpg" /> 
+<img src="20230318_131301_035.jpg" /> 
+<img src="20230318_131301_036.jpg" /> 
+<img src="20230318_131301_037.jpg" /> 
+<img src="20230318_131301_038.jpg" /> 
+<img src="20230318_131301_039.jpg" /> 
+<img src="20230318_131301_040.jpg" /> 
+<img src="20230318_131301_041.jpg" /> 
+<img src="20230318_131301_042.jpg" /> 
+<img src="20230318_131301_043.jpg" /> 
+<img src="20230318_131301_044.jpg" /> 
+<img src="20230318_131301_045.jpg" /> 
+<img src="20230318_131301_046.jpg" /> 
+<img src="20230318_131301_047.jpg" /> 
+<img src="20230318_131301_048.jpg" /> 
+<img src="20230318_131301_049.jpg" /> 
+<img src="20230318_131301_050.jpg" /> 
+<img src="20230318_131301_051.jpg" /> 
+<img src="20230318_131301_052.jpg" /> 
+<img src="20230318_131301_053.jpg" /> 
+<img src="20230318_131301_054.jpg" /> 
+<img src="20230318_131301_055.jpg" /> 
+<img src="20230318_131301_056.jpg" /> 
+<img src="20230318_131301_057.jpg" /> 
+<img src="20230318_131301_058.jpg" /> 
+<img src="20230318_131301_059.jpg" /> 
+<img src="20230318_131301_060.jpg" /> 
+<img src="20230318_131301_061.jpg" /> 
+<img src="20230318_131301_062.jpg" /> 
+
+	</div>
+	<br>
+	
+	<div class="rangeslider">
+		<input type="range" min="1" max="50" value="1" class="myslider" id="sliderRange">
+		<div class="sliderOutput row mt-3"></div>
+	</div>
+	
+<script>
+window.addEventListener('load', function() {
+
+  var rangeslider = document.getElementById("sliderRange");
+
+  var images = document.getElementById("sliderImages");
+
+  rangeslider.addEventListener('input', function() {
+    for (var i = 0; i < images.children.length; i++) {
+      images.children[i].style.display = 'none';
+    }
+    i = Number(this.value) - 1;
+    images.children[i].style.display = 'block';
+  });
+
+});
+</script>
+</body>
+</html>
